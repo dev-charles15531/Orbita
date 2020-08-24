@@ -56,62 +56,77 @@ class Timer {
 			int hour = Integer.parseInt(time.substring(0, 2));
 			int minute = Integer.parseInt(time.substring(3));
 			
-			
-			if(getHour() == hour && getMin() > minute) {
-				int rangeValueNum = getMin()-minute;
-				String rangeValue = String.valueOf(rangeValueNum);
-				String grammer = " minutes ago";
-				if(rangeValueNum == 1) {
-					range = "a minute ago";
+			if(hour < 24 && minute < 61) {
+				if(getHour() == hour && getMin() > minute) {
+					int rangeValueNum = getMin()-minute;
+					String rangeValue = String.valueOf(rangeValueNum);
+					String grammer = " minutes ago";
+					if(rangeValueNum == 1) {
+						range = "a minute ago";
+					}
+					else {
+						range = rangeValue+grammer;
+					}
+				}
+				else if(getHour() == hour && getMin() < minute) {
+					int rangeValueNum = minute - getMin();
+					String rangeValue = String.valueOf(rangeValueNum);
+					if(rangeValueNum == 1) {
+						range = "Next minute";
+					}
+					else {
+						range = "Next "+rangeValue+" minutes";
+					}
+				}
+				else if(getHour() > hour && (getMin() > minute || getMin() == minute)) {
+					int rangeValueNum = getHour() - hour;
+					String rangeValue = String.valueOf(rangeValueNum);
+					String grammer = " hours ago";
+					if(rangeValueNum == 1) {
+						range = "an hour ago";
+					}
+					else {
+						range = rangeValue+grammer;
+					}
+				}
+				else if(getHour() > hour && getMin() < minute ) {
+					int rangeValueNum = 60-(minute - getMin());
+					String rangeValue = String.valueOf(rangeValueNum);
+					String grammer = " minutes ago";
+					if(rangeValueNum == 1) {
+						range = "a minute ago";
+					}
+					else {
+						range = rangeValue+grammer;
+					}
+				}
+				else if(getHour() < hour && getMin() > minute ) {
+					int rangeValueNum = 60-(getMin() - minute);
+					String rangeValue = String.valueOf(rangeValueNum);
+					String grammer = " minutes ahead";
+					if(rangeValueNum == 1) {
+						range = "a minute ahead";
+					}
+					else {
+						range = rangeValue+grammer;
+					}
+				}
+				else if(getHour() < hour && (getMin() < minute || getMin() == minute)) {
+					int rangeValueNum = hour - getHour();
+					String rangeValue = String.valueOf(rangeValueNum);
+					if(rangeValueNum == 1) {
+						range = "Next hour";
+					}
+					else {
+						range = "Next "+rangeValue+" hours";
+					}
 				}
 				else {
-					range = rangeValue+grammer;
-				}
-			}
-			else if(getHour() == hour && getMin() < minute) {
-				int rangeValueNum = minute - getMin();
-				String rangeValue = String.valueOf(rangeValueNum);
-				if(rangeValueNum == 1) {
-					range = "Next minute";
-				}
-				else {
-					range = "Next "+rangeValue+" minutes";
-				}
-			}
-			else if(getHour() > hour && (getMin() > minute || getMin() == minute)) {
-				int rangeValueNum = getHour() - hour;
-				String rangeValue = String.valueOf(rangeValueNum);
-				String grammer = " hours ago";
-				if(rangeValueNum == 1) {
-					range = "an hour ago";
-				}
-				else {
-					range = rangeValue+grammer;
-				}
-			}
-			else if(getHour() > hour && getMin() < minute ) {
-				int rangeValueNum = 60-(minute - getMin());
-				String rangeValue = String.valueOf(rangeValueNum);
-				String grammer = " minutes ago";
-				if(rangeValueNum == 1) {
-					range = "a minute ago";
-				}
-				else {
-					range = rangeValue+grammer;
-				}
-			}
-			else if(getHour() < hour && (getMin() > minute || getMin() == minute)) {
-				int rangeValueNum = hour - getHour();
-				String rangeValue = String.valueOf(rangeValueNum);
-				if(rangeValueNum == 1) {
-					range = "Next hour";
-				}
-				else {
-					range = "Next "+rangeValue+" hours";
+					range = "Now";
 				}
 			}
 			else {
-				range = "Now";
+				System.out.println("INVALID TIME");
 			}
 			
 			return range;

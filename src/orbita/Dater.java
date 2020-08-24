@@ -85,80 +85,85 @@ class Dater {
 		int day = Integer.parseInt(date.substring(0, 2));
 		int month = Integer.parseInt(date.substring(3, 5));
 		int year = Integer.parseInt(date.substring(6));
-		
-		if(getDayNum() > day && month == getMonthNum() && year == getYear()) {
-			int rangeNumValue = getDayNum() - day;
-			String rangeValue = String.valueOf(getDayNum() - day);
-			String grammer = " days ago";
-			if(rangeNumValue == 1) {
-				range = "Yesterday";
+	
+		if((month==2&&day<29) || ((month==9||month==4||month==6||month==11)&&day<31) || (month==1||month==3||month==5||month==7||month==8||month==10||month==12)&&day<32) {
+			if(getDayNum() > day && month == getMonthNum() && year == getYear()) {
+				int rangeNumValue = getDayNum() - day;
+				String rangeValue = String.valueOf(getDayNum() - day);
+				String grammer = " days ago";
+				if(rangeNumValue == 1) {
+					range = "Yesterday";
+				}
+				else {
+					range = rangeValue+grammer;
+				}
+			}
+			
+			else if(getDayNum() < day && month == getMonthNum() && year == getYear()) {
+				int rangeNumValue =  day - getDayNum();
+				String rangeValue = String.valueOf(day - getDayNum());
+				String grammer = " days ahead";
+				if(rangeNumValue == 1) {
+					range = "Tomorrow";
+				}
+				else {
+					range = rangeValue+grammer;
+				}
+			}
+			
+			else if(month < getMonthNum() && year == getYear()) {
+				int rangeNumValue = getMonthNum() - month;
+				String rangeValue = String.valueOf(getMonthNum() - month);
+				String grammer = " months past";
+				if(rangeNumValue == 1) {
+					range = "Past month";
+				}
+				else {
+					range = rangeValue+grammer;
+				}
+			}
+			
+			else if(month > getMonthNum() && year == getYear()) {
+				int rangeNumValue = month - getMonthNum();
+				String rangeValue = String.valueOf(month - getMonthNum());
+				String grammer = " months ahead";
+				if(rangeNumValue == 1) {
+					range = "Next month";
+				}
+				else {
+					range = rangeValue+grammer;
+				}
+			}
+			
+			else if(year > getYear()) {
+				int rangeNumValue = year - getYear();
+				String rangeValue = String.valueOf(year - getYear());
+				String grammer = " years ahead";
+				if(rangeNumValue == 1) {
+					range = "Next year";
+				}
+				else {
+					range = rangeValue+grammer;
+				}
+			}
+			
+			else if(year < getYear()) {
+				int rangeNumValue = getYear() - year;
+				String rangeValue = String.valueOf(getYear() - year);
+				String grammer = " years ago";
+				if(rangeNumValue == 1) {
+					range = "Past year";
+				}
+				else {
+					range = rangeValue+grammer;
+				}
 			}
 			else {
-				range = rangeValue+grammer;
-			}
-		}
-		
-		else if(getDayNum() < day && month == getMonthNum() && year == getYear()) {
-			int rangeNumValue =  day - getDayNum();
-			String rangeValue = String.valueOf(day - getDayNum());
-			String grammer = " days ahead";
-			if(rangeNumValue == 1) {
-				range = "Tomorrow";
-			}
-			else {
-				range = rangeValue+grammer;
-			}
-		}
-		
-		else if(month < getMonthNum() && year == getYear()) {
-			int rangeNumValue = getMonthNum() - month;
-			String rangeValue = String.valueOf(getMonthNum() - month);
-			String grammer = " months past";
-			if(rangeNumValue == 1) {
-				range = "Past month";
-			}
-			else {
-				range = rangeValue+grammer;
-			}
-		}
-		
-		else if(month > getMonthNum() && year == getYear()) {
-			int rangeNumValue = month - getMonthNum();
-			String rangeValue = String.valueOf(month - getMonthNum());
-			String grammer = " months ahead";
-			if(rangeNumValue == 1) {
-				range = "Next month";
-			}
-			else {
-				range = rangeValue+grammer;
-			}
-		}
-		
-		else if(year > getYear()) {
-			int rangeNumValue = year - getYear();
-			String rangeValue = String.valueOf(year - getYear());
-			String grammer = " years ahead";
-			if(rangeNumValue == 1) {
-				range = "Next year";
-			}
-			else {
-				range = rangeValue+grammer;
-			}
-		}
-		
-		else if(year < getYear()) {
-			int rangeNumValue = getYear() - year;
-			String rangeValue = String.valueOf(getYear() - year);
-			String grammer = " years ago";
-			if(rangeNumValue == 1) {
-				range = "Past year";
-			}
-			else {
-				range = rangeValue+grammer;
+				range = "Today";
 			}
 		}
 		else {
-			range = "Today";
+			System.out.println("INVALID DATE");
 		}
 		
 		return range;

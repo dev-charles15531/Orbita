@@ -79,6 +79,7 @@ class Dater {
 	
 	//date range calculations
 	public String dateRangeFrom(String date) {
+
 		String range = null;
 		
 		int day = Integer.parseInt(date.substring(0, 2));
@@ -155,6 +156,9 @@ class Dater {
 			else {
 				range = rangeValue+grammer;
 			}
+		}
+		else {
+			range = "Today";
 		}
 		
 		return range;

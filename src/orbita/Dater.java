@@ -30,7 +30,7 @@ class Dater {
 		
 		//initialising the object's state [integers ONLY !]. 
 		this.dayNum = Integer.parseInt(entered_date.substring(8, 10));
-		this.week = //TODO ...Integer.parseInt(entered_date.substring(5, 6));
+		this.week = weekCalc(dayNum);
 		this.monthNum = Integer.parseInt(entered_date.substring(5, 7));
 		this.year = Integer.parseInt(entered_date.substring(0, 4));
 		
@@ -50,6 +50,24 @@ class Dater {
 	//return current day of the week integer
 	public int getDayNum() {
 		return this.dayNum;
+	}
+	
+	private int weekCalc(int dayDate) {
+		int weekValue = 0;
+		if(dayDate > 0 && dayDate < 8) {
+			weekValue = 1;
+		}
+		else if(dayDate > 7 && dayDate < 15) {
+			weekValue = 2;
+		}
+		else if(dayDate > 14 && dayDate < 22) {
+			weekValue = 3;
+		}
+		else if(dayDate > 21 && dayDate < 32) {
+			weekValue = 4;
+		}
+		
+		return weekValue;
 	}
 	
 	//return current week integer

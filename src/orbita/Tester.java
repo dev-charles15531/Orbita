@@ -30,6 +30,7 @@ class Tester {
 		System.out.println(testDate.getWeek());
 		System.out.println(testDate.getYear());
 		
+		System.out.println("***************************************************************************************");
 		
 		//Time operations
 		Timer testTime = new Timer();

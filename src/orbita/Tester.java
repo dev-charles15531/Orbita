@@ -16,17 +16,26 @@ class Tester {
 	private static String customDate = "29-08-2020";
 	
 	public static void main(String[] args) {
-		Dater testAll = new Dater();
 		
 		//Date operations.
-		System.out.println(testAll.dateRangeFrom(customDate));
-		System.out.println(testAll.getDate());
-		System.out.println(testAll.getDay());
-		System.out.println(testAll.getDayNum());
-		System.out.println(testAll.getMonth());
-		System.out.println(testAll.getMonthNum());
-		System.out.println(testAll.getWeek());
-		System.out.println(testAll.getYear());
+		Dater testDate = new Dater();
+		System.out.println(testDate.dateRangeFrom(customDate));
+		System.out.println(testDate.getDate());
+		System.out.println(testDate.getDay());
+		System.out.println(testDate.getDayNum());
+		System.out.println(testDate.getMonth());
+		System.out.println(testDate.getMonthNum());
+		System.out.println(testDate.getWeek());
+		System.out.println(testDate.getYear());
+		
+		
+		//Time operations
+		Timer testTime = new Timer();
+		System.out.println(testTime.getTime());
+		System.out.println(testTime.getHour());
+		System.out.println(testTime.getMin());
+		System.out.println(testTime.getSec());
+		System.out.println(testTime.TimeRangeFrom("12:00"));
 
 	}
 

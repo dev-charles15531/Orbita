@@ -2,9 +2,9 @@
 A java package for DATE and TIME operations/manipulations.
 
 ##  Getting started..
- -paste the **orbita** package folder in your project source folder.
- -import the orbita package in your current working class.
- -create a new instance of the Dater or Timer object using the format:
+ - paste the **orbita** package folder in your project source folder.
+ - import the orbita package in your current working class.
+ - create a new instance of the Dater or Timer object using the format:
    ```java
    //for date 
    Dater variable = new Dater();
@@ -14,7 +14,7 @@ A java package for DATE and TIME operations/manipulations.
    ```
   
 ##  Operations/Manipulations..
- -the Dater class has the following date operations/manipulatrions:
+ - the Dater class has the following date operations/manipulatrions:
   ```java
   //get date range from date(dd-MM-yyyy) argument [string]
   variable.dateRangeFrom(argument);
@@ -40,7 +40,7 @@ A java package for DATE and TIME operations/manipulations.
   //get current year [int]
   variable.getYear();
   ```
-  -the Timer class has the following time operations/manipulations:
+  - the Timer class has the following time operations/manipulations:
   ```java
   //get current time in the format HH:mm (24 hrs) [string]
   variable.getTime();

@@ -13,7 +13,7 @@ A java package for DATE and TIME operations/manipulations.
    Timer variable = new Timer();
    ```
   
-##Operations/Manipulations..
+##  Operations/Manipulations..
  -the Dater class has the following date operations/manipulatrions:
   ```java
   //get date range from date(dd-MM-yyyy) argument [string]
@@ -58,7 +58,7 @@ A java package for DATE and TIME operations/manipulations.
   variable.TimeRangeFrom(time);
   ```
   
-##License
+##  License
 **orbita** is released under the [MIT License] (https://github.com/dev-charles15531/Orbita/blob/master/LICENSE.md).
 
 Created by **[Charles Paul]

@@ -2,7 +2,7 @@ package orbita;
 
 import java.time.LocalDateTime;
 
-class Timer {
+public class Timer {
 	// seconds
 	private int sec;
 	

@@ -2,7 +2,7 @@ package orbita;
 
 import java.time.LocalDateTime;
 
-class Dater {	
+public class Dater {	
 		
 	//day => Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday.
 	//dayNum => 1,      2,       3,        4,        5,       6,       7.

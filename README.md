@@ -59,7 +59,6 @@ A java package for DATE and TIME operations/manipulations.
   ```
   
 ##  License
-**orbita** is released under the [MIT License] (https://github.com/dev-charles15531/Orbita/blob/master/LICENSE.md).
+**orbita** is released under the [MIT License](https://github.com/dev-charles15531/Orbita/blob/master/LICENSE.md).
 
-Created by **[Charles Paul]
-(https://github.com/dev-charles15531)**
+Created by **[Charles Paul](https://github.com/dev-charles15531)**
